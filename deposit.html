@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deposit - Anchor Wealth</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Deposit Funds</h1>
+<div class="deposit-info">
+  <div class="card">
+    <h3>Minimum Deposit</h3>
+    <p>$100</p>
+  </div>
+  
+  <div class="card">
+    <h3>Accepted Crypto</h3>
+    <p>BTC, ETH, USDT</p>
+  </div>
+  
+  <div class="card">
+    <h3>Processing Time</h3>
+    <p>5 - 30 Minutes</p>
+  </div>
+  <div class="notice">
+  🔒 All deposits are verified on the blockchain before being credited to your account.
+</div>
+</div>
+<p>Select a cryptocurrency and submit payment details</p>
+</header>
+
+<div class="form-container">
+<select>
+  <option>Starter Plan - 15% ROI</option>
+  <option>Silver Plan - 30% ROI</option>
+  <option>Gold Plan - 50% ROI</option>
+  <option>Platinum Plan - 75% ROI</option>
+</select>
+<select>
+<option>Bitcoin (BTC)</option>
+<option>Ethereum (ETH)</option>
+<option>USDT (TRC20)</option>
+</select>
+
+<input type="number" placeholder="Enter Deposit Amount">
+
+<input type="text" placeholder="Transaction Hash">
+<p>
+  Enter the amount deposited and the blockchain
+  transaction hash for verification.
+</p>
+
+<div class="deposit-note">
+<a href="payment.html"
+class="btn"
+onclick="showNotification('Deposit submitted successfully!')">
+Continue
+</a>
+  <h3>Important Notice</h3>
+  <p>
+    Deposits are verified on the blockchain before being credited.
+    Please ensure all payment details are correct before proceeding.
+  </p>
+</div>
+</div>
+Need help?
+
+Support Team Available 24/7
+
+Email: support@anchorwealth.com
+<div id="notification" class="notification"></div>
+<script>
+  function showNotification(message) {
+    const notification = document.getElementById("notification");
+    
+    notification.innerText = message;
+    notification.style.display = "block";
+    
+    setTimeout(() => {
+      notification.style.display = "none";
+    }, 3000);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Withdraw Funds</title>
+  
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      margin: 0;
+    }
+    
+    .header {
+      background: #021d49;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    
+    .card {
+      background: white;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .balance {
+      font-size: 35px;
+      font-weight: bold;
+      color: #d4af37;
+    }
+    
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #cccccc;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    
+    .footer {
+      background: #021d49;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="header">
+    <h2>Withdrawal Center</h2>
+  </div>
+  
+  <div class="card">
+    
+    <h2>Withdrawal Center</h2>
+
+<p>Available Withdrawal Balance</p>
+
+<div class="balance">
+$0.00
+</div>
+
+<p>
+Withdrawal requests become available after an active investment has generated withdrawable profits.
+</p>
+
+<hr>
+
+<h3>Withdrawal Request</h3>
+
+<input type="number"
+placeholder="Withdrawal Amount"
+disabled>
+
+<input type="password"
+placeholder="Enter Withdrawal PIN"
+disabled>
+
+<button disabled>
+Submit Withdrawal
+</button>
+
+<p>
+You must have an active investment and
+available profits before making a withdrawal.
+</p>
+<div class="card">
+  
+  <h3>Security Status</h3>
+  
+  <p>
+  
+    <div class="card">
+  
+  <h3>Withdrawal History</h3>
+  
+  <p>
+    No withdrawal records found.
+  </p>
+  
+  <p>
+    Your withdrawal history will appear here
+    once you submit a withdrawal request.
+  </p>
+  <div class="card">
+  
+  <h3>Security Status</h3>
+  
+  <p>
+    Withdrawal PIN:
+    <span id="withdrawPinStatus">
+      Not Active❌
+    </span>
+  </p>
+  
+</div>
+</div>
+    <button disabled>
+Submit Withdrawal Request
+    </button>
+    
+  </div>
+  
+  <div class="footer">
+    © 2026 Anchor Wealth
+  </div>
+  <script>
+
+let pin =
+localStorage.getItem("withdrawalPin");
+
+if(pin){
+
+document.getElementById("withdrawPinStatus")
+.innerHTML = "Created ✅";
+
+}
+
+</script>
+<div id="notification" class="notification"></div>
+</body>
+</html>

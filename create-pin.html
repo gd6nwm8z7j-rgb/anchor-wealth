@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create PIN</title>
+  
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+    }
+    
+    .box {
+      background: white;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    
+    button {
+      width: 95%;
+      padding: 14px;
+      background: #d4af37;
+      color: #021d49;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+    }
+    
+    h2 {
+      color: #021d49;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="box">
+    
+    <h2>Create Withdrawal PIN</h2>
+    
+    <p>
+      Create a secure 4-digit PIN for withdrawals.
+    </p>
+    <input type="password" id="pin" placeholder="Enter 4-Digit PIN">
+
+<input type="password" id="confirmPin" placeholder="Confirm PIN">
+    
+   <button onclick="savePin()">
+  Create PIN
+</button> 
+    </button>
+    
+  </div>
+  <script>
+
+function savePin(){
+
+let pin =
+document.getElementById("pin").value;
+
+let confirmPin =
+document.getElementById("confirmPin").value;
+
+if(pin.length !== 4){
+
+alert("PIN must be 4 digits");
+return;
+
+}
+
+if(pin !== confirmPin){
+
+alert("PINs do not match");
+return;
+
+}
+
+localStorage.setItem("withdrawalPin", pin);
+
+alert("PIN Created Successfully ✅");
+
+window.location.href = "profile.html";
+
+}
+
+</script>
+</body>
+
+</html>

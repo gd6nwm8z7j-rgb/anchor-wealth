@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anchor Wealth - Payment</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.hero{
+background:#08265a;
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.hero h1{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.payment-card{
+background:white;
+max-width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 2px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.payment-card h2{
+color:#08265a;
+margin-bottom:20px;
+}
+
+.wallet-box{
+background:#f5f5f5;
+padding:15px;
+border-radius:10px;
+margin:20px 0;
+word-break:break-all;
+font-weight:bold;
+}
+
+.qr-box{
+margin:20px 0;
+}
+
+.qr-box img{
+width:250px;
+max-width:100%;
+border-radius:10px;
+}
+
+.notice{
+background:#fff8e1;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+font-size:14px;
+}
+
+.btn{
+display:block;
+background:#d4af37;
+color:#08265a;
+text-decoration:none;
+padding:15px;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+}
+
+.summary{
+background:#f5f5f5;
+padding:15px;
+border-radius:10px;
+margin-bottom:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Complete Your Deposit</h1>
+<p>Send your cryptocurrency to the wallet address below</p>
+</div>
+
+<div class="payment-card">
+
+<h2>Bitcoin Payment</h2>
+
+<div class="summary">
+<p><strong>Minimum Investment:</strong> $100</p>
+<p><strong>Processing Time:</strong> 5 - 30 Minutes</p>
+</div>
+
+<div class="qr-box">
+<img src="IMG_2300.jpeg" alt="Bitcoin QR Code" width="180">
+</div>
+
+<div style="margin-top: 50px;">
+  <h2>Bitcoin Wallet Address</h2>
+</div>
+<div class="wallet-box" id="walletAddress">
+  bc1qz25nldjxzd497hsvjapgjs8ch483dvw2cursvd
+</div>
+  Copy Wallet Address
+</button>
+<div class="notice">
+⚠️ Send only Bitcoin (BTC) to this address.<br><br>
+After payment, save your transaction hash and wait for blockchain confirmation.
+</div>
+
+<a href="dashboard.html" class="btn">
+Submit Payment
+</a>
+
+</div>
+<script>
+  function copyAddress() {
+    var text = document.getElementById("walletAddress").innerText;
+    
+    var input = document.createElement("textarea");
+    input.value = text;
+    document.body.appendChild(input);
+    
+    input.select();
+    document.execCommand("copy");
+    
+    document.body.removeChild(input);
+    
+    alert("Wallet address copied!");
+  }
+</script>
+</body>
+</html>

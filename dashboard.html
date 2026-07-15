@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard - Anchor Wealth</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="welcome-box">
+<h2 id="welcomeName">
+  Hello, Investor 👋
+</h2>
+  <p>Welcome back to Anchor Wealth</p>
+  <p>Your account is ready.</p>
+<p>Start your first investment to begin earning.</p>
+<div class="dashboard-actions">
+  <a href="plans.html" class="action-btn">
+    Start Investing
+  </a>
+  
+  <a href="deposit.html" class="action-btn">
+    Deposit Funds
+  </a>
+  
+  <a href="profile.html" class="action-btn">
+    My Profile
+  </a>
+</div>
+</div>
+<div class="dashboard-nav">
+  <a href="dashboard.html">Dashboard</a>
+  <a href="plans.html">Plans</a>
+  <a href="deposit.html">Deposit</a>
+  <a href="withdraw.html">Withdraw</a>
+  <a href="profile.html">Profile</a>
+</div>
+<div class="dashboard-cards">
+  
+  <div class="card">
+    <h3>Account Balance</h3>
+    <p>$0.00</p>
+  </div>
+  
+  <div class="card">
+    <h3>Active Investments</h3>
+    <p>0</p>
+  </div>
+  
+  <div class="card">
+    <h3>Total Profit</h3>
+    <p>$0.00</p>
+  </div>
+  
+  <div class="card">
+    <h3>Withdrawable Balance</h3>
+    <p>$0.00</p>
+  </div>
+  
+</div>
+<div class="info-card">
+  <h3>📊 Recent Activity</h3>
+  <p>No activity yet.</p>
+  <p>Your deposits, investments and withdrawals will appear here.</p>
+</div>
+</div>
+
+<div class="action-buttons">
+  
+</div>
+
+<div class="info-card">
+  <h3>💼 Investment Status</h3>
+  <p>No active investment plan.</p>
+  <p>Select an investment plan and make your first deposit to begin earning profits.</p>
+</div><div class="info-card">
+  <h3>💼 Investment Status</h3>
+  <p>No active investment plan.</p>
+  <p>Select an investment plan and make your first deposit to begin earning profits.</p>
+</div>  
+</div>
+<div class="referral-box">
+  <h3>Referral Program</h3>
+  
+  <p>
+    Invite friends and earn a referral bonus when they make
+    their first investment.
+  </p>
+  
+  <a href="referral.html" class="action-btn">
+    Referral Center
+  </a>
+</div>
+</section>
+<a href="index.html" class="btn">Logout</a>
+</div>
+<footer>
+  <p>© 2026 Anchor Wealth. All Rights Reserved.</p>
+</footer>
+</div>
+<script>
+
+let investorName = localStorage.getItem("fullname");
+
+if (investorName) {
+  let firstName = investorName.split(" ")[0];
+  
+  document.getElementById("welcomeName").innerHTML =
+    "Hello, " + firstName + " 👋";
+}
+</script>
+<div id="notification" class="notification"></div>
+</body>
+</html>

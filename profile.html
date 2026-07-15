@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile - Anchor Wealth</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+margin:0;
+}
+
+.header{
+background:#021d49;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.card{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#021d49;
+}
+
+.info{
+margin:15px 0;
+font-size:16px;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:15px;
+margin-top:15px;
+background:#d4af37;
+color:#021d49;
+font-weight:bold;
+border:none;
+border-radius:8px;
+}
+
+.footer{
+background:#021d49;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h2>Investor Profile</h2>
+
+<p id="welcomeProfile">
+  Welcome back
+</p>
+
+<p>
+  Manage your account and security settings.
+</p>
+<p>Manage your account information</p>
+</div>
+
+<div class="card">
+<div class="info">
+  <strong>Full Name:</strong>
+  <span id="profileName">Investor</span>
+</div>
+
+<div class="info">
+  <strong>Email:</strong>
+  <span id="profileEmail">investor@email.com</span>
+</div>
+
+<div class="info">
+  <strong>Country:</strong>
+  <span id="profileCountry">Not Selected</span>
+</div>
+<div class="info">
+  <strong>Withdrawal PIN:</strong>
+  <span id="pinStatus">Not Created ❌</span>
+</div>
+<div class="card">
+  
+  <h3>Account Settings</h3>
+  
+  <button class="btn">
+    Edit Profile
+  </button>
+  
+  <button class="btn">
+    Change Email
+  </button>
+  
+  <button class="btn">
+    Change Password
+  </button>
+  
+  <button class="btn" onclick="location.href='create-pin.html'">
+    Change Withdrawal PIN
+  </button>
+  
+  <button class="btn" onclick="logoutUser()">
+    Logout
+  </button>
+  
+</div>
+<div class="info-card">
+  <h3>🔒 Account Security</h3>
+  
+  <p>Email Status: Verified ✅</p>
+  
+  <p>Withdrawal PIN: Securely configured ✅</p>
+  
+  <p>Account Protection: Active 🔒</p>
+</div>
+<button class="btn" onclick="location.href='create-pin.html'">
+Create Withdrawal PIN
+</button>
+
+<button class="btn">
+Change Password
+</button>
+
+</div>
+
+<div class="footer">
+© 2026 Anchor Wealth
+</div>
+<script>
+
+let investorName = localStorage.getItem("fullname");
+let investorEmail = localStorage.getItem("email");
+let investorCountry = localStorage.getItem("country");
+
+if(investorName){
+document.getElementById("profileName").innerHTML = investorName;
+}
+
+if(investorEmail){
+document.getElementById("profileEmail").innerHTML = investorEmail;
+}
+
+if(investorCountry){
+document.getElementById("profileCountry").innerHTML = investorCountry;
+}
+if (investorName) {
+  document.getElementById("welcomeProfile").innerHTML =
+    "Welcome, " + investorName;
+}
+</script>
+<script>
+
+let savedPin =
+localStorage.getItem("withdrawalPin");
+
+if(savedPin){
+
+document.getElementById("pinStatus")
+.innerHTML = "Created ✅";
+
+}
+
+</script>
+<script>
+
+let pinStatus =
+localStorage.getItem("withdrawalPin");
+
+if(pinStatus){
+
+document.getElementById("securityPinStatus")
+.innerHTML = "Created ✅";
+
+}
+
+function logoutUser(){
+
+if(confirm("Are you sure you want to logout?")){
+
+window.location.href = "login.html";
+
+}
+
+}
+let investorName = localStorage.getItem("fullname");
+
+if (investorName) {
+  let firstName = investorName.split(" ")[0];
+  
+  document.getElementById("welcomeProfile").innerHTML =
+    "Welcome, " + firstName + " 👋";
+}
+</script>
+<div id="notification" class="notification"></div>
+</body>
+</html>
